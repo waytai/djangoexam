@@ -42,6 +42,14 @@ class Device(models.Model):
     def __str__(self):
         return self.name
 
+
+class DeviceOne(models.Model):
+    title = models.CharField(max_length=40, unique=True)
+    device = models.OneToOneField(Device, blank=True, null=True, help_text='help test')
+    def __str__(self):
+        return self.title
+
+
 class DeviceGroup(models.Model):
     """
     设备组
